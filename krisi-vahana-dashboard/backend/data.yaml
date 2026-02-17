@@ -1,0 +1,7 @@
+train: C:/tomato_final_dataset/images
+val: C:/tomato_final_dataset/images
+
+names:
+  0: riped
+  1: unriped
+  2: damaged

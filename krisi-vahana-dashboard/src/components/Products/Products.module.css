@@ -1,0 +1,211 @@
+.productsContainer {
+  padding: 100px 8%;
+  background: linear-gradient(135deg, #0f2d1f, #153124);
+  min-height: 100vh;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #f1c40f;
+}
+
+.header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.productGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.productCard {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  transition: 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.imageWrapper {
+  flex: 1;
+}
+
+.imageWrapper img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.productContent {
+  flex: 1;
+}
+
+.productContent h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #f1c40f;
+}
+
+.productContent p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.productContent ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.productContent li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.learnBtn {
+  background-color: #f1c40f;
+  color: #153124;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.learnBtn:hover {
+  background-color: #d4ac0d;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .productCard {
+    gap: 30px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .productsContainer {
+    padding: 80px 6%;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .productCard {
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .imageWrapper {
+    width: 100%;
+  }
+
+  .imageWrapper img {
+    width: 100%;
+  }
+
+  .productContent {
+    width: 100%;
+  }
+
+  .productContent h2 {
+    font-size: 1.6rem;
+  }
+
+  .productContent p {
+    font-size: 0.95rem;
+  }
+
+  .productContent ul {
+    margin-bottom: 20px;
+  }
+
+  .productContent li {
+    font-size: 0.95rem;
+  }
+
+  .learnBtn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* ================= ROADMAP SECTION ================= */
+
+.roadmapSection {
+  margin-top: 120px;
+  padding: 80px 8%;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+}
+
+.roadmapHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.roadmapHeader h2 {
+  font-size: 2.5rem;
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.roadmapHeader p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(241, 196, 15, 0.15);
+  color: #f1c40f;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+

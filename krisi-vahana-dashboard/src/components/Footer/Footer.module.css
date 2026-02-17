@@ -1,0 +1,59 @@
+.footer {
+  background: linear-gradient(to top, #071a12, #0b2a1c);
+  padding: 60px 8% 40px 8%;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Top Accent Line */
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f1c40f, transparent);
+}
+
+/* Main Row */
+
+.row {
+  margin-bottom: 30px;
+}
+
+.brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f1c40f;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Divider */
+
+.line {
+  margin: 30px auto;
+  width: 60%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Bottom */
+
+.bottom {
+  margin-top: 10px;
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+}

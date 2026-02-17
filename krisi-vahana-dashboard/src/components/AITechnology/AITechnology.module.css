@@ -1,0 +1,318 @@
+.container {
+  background: radial-gradient(circle at top, #0b2a1c, #071a12);
+  color: white;
+  padding-bottom: 100px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 45px 4% 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero span {
+  color: #f1c40f;
+}
+
+.hero p {
+  margin-top: 2px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* DEMO SECTION */
+
+.demoSection {
+  padding: 20px 6%;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.demoHeader h2 {
+  color: #f1c40f;
+}
+
+.uploadBox {
+  margin-top: 30px;
+}
+
+.uploadBox input {
+  padding: 3px;
+}
+
+.uploadBox button {
+  margin-left: 15px;
+  padding: 8px 18px;
+  background: #f1c40f;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* RESULT CARDS */
+
+.resultWrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.imageCard {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 350px;
+}
+
+.imageCard img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.statsCard {
+  background: linear-gradient(135deg, #f1c40f22, #00000033);
+  padding: 30px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: left;
+}
+
+/* TECH SECTION */
+
+.techSection {
+  padding: 60px 8%;   /* reduced */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+
+.techCard {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.techCard:hover {
+  transform: translateY(-6px);
+  border-color: #f1c40f;
+}
+
+.techCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #f1c40f;
+}
+
+.techCard p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+.uploadWrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Hide ugly default input */
+.hiddenInput {
+  display: none;
+}
+
+/* Styled Upload Button */
+.uploadBtn {
+  background: linear-gradient(135deg, #f1c40f, #d4ac0d);
+  color: #0b1f15;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.uploadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(241,196,15,0.4);
+}
+
+/* File name text */
+.fileName {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Reset button */
+.cancelBtn {
+  background: transparent;
+  border: 1px solid #f1c40f;
+  color: #f1c40f;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cancelBtn:hover {
+  background: #f1c40f;
+  color: #0b1f15;
+}
+
+/* ================= DATASET SECTION ================= */
+
+.datasetSection {
+  padding: 100px 8%;
+  background: linear-gradient(135deg, #0f2d1f, #153124);
+  color: white;
+}
+
+.datasetHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.datasetHeader h2 {
+  font-size: 2.5rem;
+  color: #f1c40f;
+  margin-bottom: 20px;
+}
+
+.datasetHeader p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.datasetGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.datasetCard {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  transition: 0.3s ease;
+}
+
+.datasetCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.datasetCard h4 {
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.datasetCard p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .datasetGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .datasetSection {
+    padding: 70px 6%;
+  }
+
+  .datasetGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .datasetHeader h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ================= SAMPLE IMAGE SECTION ================= */
+
+.sampleImagesSection {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.sampleImagesSection h3 {
+  font-size: 2.2rem;
+  color: #f1c40f;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* CONTINUOUS ROW */
+
+.sampleGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* Each Item */
+
+.sampleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.35s ease;
+}
+
+/* Circular Image */
+
+.sampleItem img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 4px solid #f1c40f;
+  transition: 0.4s ease;
+}
+
+/* Label */
+
+.sampleItem span {
+  margin-top: 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effect */
+
+.sampleItem:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(241,196,15,0.5);
+}
+
+.sampleItem:hover span {
+  color: #f1c40f;
+}

@@ -1,0 +1,178 @@
+.scrollContainer {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Hide scrollbar for clean look */
+}
+
+.homeContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8% 20px;
+  scroll-snap-align: start;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.contentSection {
+  flex: 1.2;
+  z-index: 2;
+  padding-top: 80px; 
+}
+
+.heading {
+  font-size: 4.5rem; /* Large impact font like reference */
+  font-weight: 800;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.highlightText {
+  color: #f1c40f; /* Your Gold */
+}
+
+.subtext {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 550px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.mainBtn {
+  background-color: #f1c40f !important; /* Gold */
+  color: #153124 !important; /* Deep Green */
+  padding: 14px 32px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+}
+
+.outlineBtn {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  padding: 14px 32px !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+}
+
+.outlineBtn:hover {
+  border-color: #f1c40f !important;
+  color: #f1c40f !important;
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageCard {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+  transform: rotate(-2deg); /* Modern slight tilt */
+  transition: 0.5s ease;
+}
+
+.imageCard:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.farmImg {
+  width: 100%;
+  display: block;
+}
+
+.moreText {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  max-width: 580px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .homeContainer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 6% 10px;
+  }
+
+  .contentSection {
+    padding-top: 70px;
+    flex: unset;
+  }
+
+  .heading {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+
+  .subtext {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .mainBtn,
+  .outlineBtn {
+    width: 100% !important;
+    max-width: 260px;
+  }
+
+  .imageSection {
+    margin-top: 40px;
+  }
+
+  .imageCard {
+    max-width: 100%;
+    transform: none; /* Remove tilt on mobile */
+  }
+
+  .imageCard:hover {
+    transform: none;
+  }
+
+  .moreText {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+}
+

@@ -1,0 +1,113 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2%;
+  position: fixed; /* Stick to top like the reference */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 26, 15, 0.8); /* Deep green with transparency */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.logo {
+  height: 38px;
+  border-radius: 4px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.links a.active {
+  color: #f1c40f;
+  position: relative;
+}
+
+.links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f1c40f;
+}
+
+
+.themeSwitch {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* HAMBURGER - Hidden on Desktop */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+
+  .links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(15, 26, 15, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 20px 0;
+    gap: 1.5rem;
+    display: none;
+  }
+
+  .showMenu {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .links a {
+    font-size: 1rem;
+  }
+}
