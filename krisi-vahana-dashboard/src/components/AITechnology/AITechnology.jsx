@@ -1,57 +1,9 @@
-import React, { useState, useRef } from "react";
 import styles from "./AITechnology.module.css";
-import axios from "axios";
 import ripedImg from "../../assets/ripe1.jpg";
 import unripedImg from "../../assets/unripe1.jpg";
 import damagedImg from "../../assets/damage1.jpg";
 
 export default function AITechnology() {
-  const fileInputRef = useRef(null);
-
-  const [originalImage, setOriginalImage] = useState(null);
-  const [resultImage, setResultImage] = useState(null);
-  const [counts, setCounts] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const handleUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    setOriginalImage(URL.createObjectURL(file));
-    setLoading(true);
-    setError(null);
-
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/predict",
-        formData,
-      );
-
-      setResultImage(`data:image/jpeg;base64,${response.data.image}`);
-      setCounts(response.data.counts);
-    } catch (err) {
-      setError("AI backend not connected.");
-    }
-
-    setLoading(false);
-  };
-
-  const handleCancel = () => {
-    setOriginalImage(null);
-    setResultImage(null);
-    setCounts(null);
-    setError(null);
-    setLoading(false);
-
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  };
-
   return (
     <div className={styles.container}>
       {/* HERO */}
@@ -66,72 +18,19 @@ export default function AITechnology() {
       </section>
 
       {/* LIVE AI DEMO - FEATURED */}
-      <section className={styles.demoSection}>
-        <div className={styles.demoHeader}>
-          <h2>🔬 Live Tomato AI Model</h2>
-          <p>Upload an image and test our production AI model instantly.</p>
+      {/* PRODUCT DEMO VIDEO SECTION */}
+      <section className={styles.videoSection}>
+        <div className={styles.videoWrapper}>
+          <iframe
+            className={styles.demoVideo}
+            src="https://www.youtube.com/embed/jc7agQ74Dr8"
+            title="Autonomous Harvesting Demo"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
         </div>
-
-        <div className={styles.uploadBox}>
-          <div className={styles.uploadWrapper}>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              onChange={handleUpload}
-              className={styles.hiddenInput}
-            />
-
-            <button
-              className={styles.uploadBtn}
-              onClick={() => fileInputRef.current.click()}>
-              Upload Image
-            </button>
-
-            {fileInputRef.current?.files?.[0] && (
-              <span className={styles.fileName}>
-                {fileInputRef.current.files[0].name}
-              </span>
-            )}
-
-            {originalImage && (
-              <button className={styles.cancelBtn} onClick={handleCancel}>
-                Reset
-              </button>
-            )}
-          </div>
-        </div>
-
-        {loading && <p className={styles.loading}>Running AI inference...</p>}
-        {error && <p className={styles.error}>{error}</p>}
-
-        {(originalImage || resultImage) && (
-          <div className={styles.resultWrapper}>
-            {originalImage && (
-              <div className={styles.imageCard}>
-                <h4>Original</h4>
-                <img src={originalImage} alt="original" />
-              </div>
-            )}
-
-            {resultImage && (
-              <div className={styles.imageCard}>
-                <h4>Detection</h4>
-                <img src={resultImage} alt="result" />
-              </div>
-            )}
-
-            {counts && (
-              <div className={styles.statsCard}>
-                <h4>Detection Summary</h4>
-                <div>🍎 Riped: {counts.riped}</div>
-                <div>🍏 Unriped: {counts.unriped}</div>
-                <div>Total: {counts.riped + counts.unriped}</div>
-              </div>
-            )}
-          </div>
-        )}
       </section>
+
       {/* MODEL TRAINING SECTION */}
       <section className={styles.datasetSection}>
         <div className={styles.datasetHeader}>

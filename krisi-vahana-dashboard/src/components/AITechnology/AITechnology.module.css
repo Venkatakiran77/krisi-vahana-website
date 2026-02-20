@@ -316,3 +316,50 @@
 .sampleItem:hover span {
   color: #f1c40f;
 }
+
+/* ================= VIDEO SECTION ================= */
+
+.videoSection {
+  padding: 100px 8%;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2d1f, #153124);
+}
+
+.videoHeader h2 {
+  font-size: 2.4rem;
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.videoHeader p {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.videoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.demoVideo {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  border: 2px solid rgba(241,196,15,0.3);
+}
+
+.videoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.demoVideo {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}

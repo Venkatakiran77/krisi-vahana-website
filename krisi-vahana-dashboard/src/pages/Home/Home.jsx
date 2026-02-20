@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./Home.module.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-
 import bg1 from "../../assets/new_image.jpg";
 import bg2 from "../../assets/robotics_arm.jpg";
 import bg3 from "../../assets/oneAcre.png";

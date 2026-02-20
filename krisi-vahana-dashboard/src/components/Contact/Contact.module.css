@@ -97,6 +97,7 @@
 
 .contactCard a:hover {
   color: #f1c40f;
+  text-decoration: underline;
 }
 
 /* RESPONSIVE */
@@ -109,4 +110,19 @@
   .contactCard {
     width: 100%;
   }
+}
+
+.quickContact {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.quickContact a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.quickContact a:hover {
+  text-decoration: underline;
 }
