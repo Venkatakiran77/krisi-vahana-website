@@ -1,184 +1,67 @@
+/* MAIN CONTAINER */
 .container {
-  background: radial-gradient(circle at top, #0b2a1c, #071a12);
+  background-color: #05140d; /* Your Deep Dark Green */
   color: white;
-  padding-bottom: 100px;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  font-family: 'Inter', sans-serif;
 }
 
-/* HERO */
-
+/* HERO SECTION */
 .hero {
   text-align: center;
-  padding: 45px 4% 20px;
+  padding: 80px 4% 40px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
 }
 
 .hero span {
-  color: #f1c40f;
+  color: #f1c40f; /* Gold accent */
+  display: block;
 }
 
 .hero p {
-  margin-top: 2px;
-  color: rgba(255,255,255,0.7);
-}
-
-/* DEMO SECTION */
-
-.demoSection {
-  padding: 20px 6%;
-  text-align: center;
-  background: rgba(255,255,255,0.03);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.demoHeader h2 {
-  color: #f1c40f;
-}
-
-.uploadBox {
-  margin-top: 30px;
-}
-
-.uploadBox input {
-  padding: 3px;
-}
-
-.uploadBox button {
-  margin-left: 15px;
-  padding: 8px 18px;
-  background: #f1c40f;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* RESULT CARDS */
-
-.resultWrapper {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  margin-top: 50px;
-  flex-wrap: wrap;
-}
-
-.imageCard {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 15px;
-  width: 350px;
-}
-
-.imageCard img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.statsCard {
-  background: linear-gradient(135deg, #f1c40f22, #00000033);
-  padding: 30px;
-  border-radius: 15px;
-  width: 250px;
-  text-align: left;
-}
-
-/* TECH SECTION */
-
-.techSection {
-  padding: 60px 8%;   /* reduced */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
-
-
-.techCard {
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 18px;
-  transition: 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.techCard:hover {
-  transform: translateY(-6px);
-  border-color: #f1c40f;
-}
-
-.techCard h3 {
+  max-width: 650px;
+  margin: 0 auto;
   font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #f1c40f;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.techCard p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.4;
-}
-
-.uploadWrapper {
-  margin-top: 20px;
+/* VIDEO SECTION */
+.videoSection {
+  padding: 40px 8%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
 }
 
-/* Hide ugly default input */
-.hiddenInput {
-  display: none;
+.videoWrapper {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 196, 15, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background: #000;
 }
 
-/* Styled Upload Button */
-.uploadBtn {
-  background: linear-gradient(135deg, #f1c40f, #d4ac0d);
-  color: #0b1f15;
+.demoVideo {
+  width: 100%;
+  height: 100%;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
 }
 
-.uploadBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(241,196,15,0.4);
-}
-
-/* File name text */
-.fileName {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
-}
-
-/* Reset button */
-.cancelBtn {
-  background: transparent;
-  border: 1px solid #f1c40f;
-  color: #f1c40f;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.cancelBtn:hover {
-  background: #f1c40f;
-  color: #0b1f15;
-}
-
-/* ================= DATASET SECTION ================= */
-
+/* DATASET & MODEL SECTION */
 .datasetSection {
-  padding: 100px 8%;
-  background: linear-gradient(135deg, #0f2d1f, #153124);
-  color: white;
+  padding: 80px 8%;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .datasetHeader {
@@ -187,179 +70,117 @@
 }
 
 .datasetHeader h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #f1c40f;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .datasetHeader p {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
-  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
 }
 
 .datasetGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 80px;
 }
 
 .datasetCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   padding: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(20px);
-  transition: 0.3s ease;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
 }
 
 .datasetCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #f1c40f;
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .datasetCard h4 {
   color: #f1c40f;
-  margin-bottom: 15px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .datasetCard p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 1024px) {
-  .datasetGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .datasetSection {
-    padding: 70px 6%;
-  }
-
-  .datasetGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .datasetHeader h2 {
-    font-size: 1.8rem;
-  }
-}
-
-/* ================= SAMPLE IMAGE SECTION ================= */
-
+/* SAMPLE IMAGES SECTION */
 .sampleImagesSection {
-  padding: 80px 8%;
+  margin-top: 60px;
   text-align: center;
 }
 
 .sampleImagesSection h3 {
-  font-size: 2.2rem;
-  color: #f1c40f;
-  margin-bottom: 60px;
-  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: white;
 }
-
-/* CONTINUOUS ROW */
 
 .sampleGrid {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 80px;
+  gap: 40px;
   flex-wrap: wrap;
 }
-
-/* Each Item */
 
 .sampleItem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 0.35s ease;
+  gap: 15px;
 }
-
-/* Circular Image */
 
 .sampleItem img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Circular images like your style preference */
   object-fit: cover;
-  object-position: center;
-  border: 4px solid #f1c40f;
-  transition: 0.4s ease;
+  border: 3px solid rgba(241, 196, 15, 0.3);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-/* Label */
-
-.sampleItem span {
-  margin-top: 18px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.5px;
-}
-
-/* Hover Effect */
 
 .sampleItem:hover img {
-  transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(241,196,15,0.5);
+  transform: scale(1.1);
+  border-color: #f1c40f;
+  box-shadow: 0 0 30px rgba(241, 196, 15, 0.3);
 }
 
-.sampleItem:hover span {
+.sampleItem span {
+  font-weight: 600;
+  font-size: 1rem;
   color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* ================= VIDEO SECTION ================= */
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .datasetSection {
+    padding: 60px 5%;
+  }
 
-.videoSection {
-  padding: 100px 8%;
-  text-align: center;
-  background: linear-gradient(135deg, #0f2d1f, #153124);
-}
+  .sampleGrid {
+    gap: 20px;
+  }
 
-.videoHeader h2 {
-  font-size: 2.4rem;
-  color: #f1c40f;
-  margin-bottom: 15px;
-}
-
-.videoHeader p {
-  max-width: 700px;
-  margin: 0 auto 50px;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.videoWrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.demoVideo {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 20px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-  border: 2px solid rgba(241,196,15,0.3);
-}
-
-.videoWrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.demoVideo {
-  width: 100%;
-  max-width: 900px;
-  height: 500px;
-  border-radius: 20px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  .sampleItem img {
+    width: 150px;
+    height: 150px;
+  }
 }

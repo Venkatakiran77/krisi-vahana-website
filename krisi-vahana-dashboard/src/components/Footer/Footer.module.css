@@ -1,59 +1,91 @@
 .footer {
-  background: linear-gradient(to top, #071a12, #0b2a1c);
-  padding: 60px 8% 40px 8%;
+  /* Updated to your specific Deep Dark Green */
+  background-color: #05140d; 
+  padding: 80px 8% 40px 8%;
   text-align: center;
   color: white;
   position: relative;
+  /* Ensure it sits at the bottom of the container */
+  width: 100%;
 }
 
-/* Top Accent Line */
-
+/* Top Accent Line - Provides a "glowing" separator from the page content */
 .footer::before {
   content: "";
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #f1c40f, transparent);
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(241, 196, 15, 0.4), 
+    transparent
+  );
 }
 
 /* Main Row */
-
 .row {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .brand {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: #f1c40f;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .subtext {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   letter-spacing: 0.5px;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Divider */
+/* Socials or Links (Optional addition based on standard footers) */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+}
 
+.links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #f1c40f;
+}
+
+/* Divider Line */
 .line {
-  margin: 30px auto;
-  width: 60%;
-  height: 1px;
-  background: rgba(255,255,255,0.1);
+  margin: 40px auto 30px;
+  width: 100px; /* Small stylized divider */
+  height: 2px;
+  background: #f1c40f;
+  border-radius: 2px;
+  opacity: 0.3;
 }
 
-/* Bottom */
-
+/* Bottom Copyright Section */
 .bottom {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .copy {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+  letter-spacing: 1px;
 }

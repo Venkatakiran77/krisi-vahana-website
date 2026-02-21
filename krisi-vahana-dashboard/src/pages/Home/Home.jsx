@@ -1,100 +1,115 @@
-import React, { useState } from "react";
-import styles from "./Home.module.css";
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import bg1 from "../../assets/new_image.jpg";
-import bg2 from "../../assets/robotics_arm.jpg";
-import bg3 from "../../assets/oneAcre.png";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  Scan,
+  Tractor,
+  Database,
+  ArrowRight,
+  CheckCircle2,
+  Sprout,
+} from "lucide-react";
 
-const slides = [
-  {
-    title: "Engineering Robotics",
-    highlight: "For Real Farms",
-    description:
-      "Krisi Vahana Pvt Ltd builds agricultural robots designed for Indian field conditions — small, dense, irregular, and labour-constrained.",
-    more: "Most agricultural machines fail because they are designed for controlled environments. We build by observing real farms first — soil variability, crop density, heat, dust, uneven terrain, and labour limitations. Our engineering begins where reality begins.",
-    buttonText: "Explore Our Work",
-    link: "/aiTechnology",
-    image: bg1,
-    gradient: "linear-gradient(135deg, #0f1f16 0%, #153124 50%, #b38b45 100%)",
-  },
-  {
-    title: "Autonomous Selective",
-    highlight: "Crop Harvesting",
-    description:
-      "We focus on intelligent, selective harvesting beginning with tomatoes.",
-    more: "Selective harvesting requires perception precision and manipulation delicacy. Our systems combine computer vision, motion planning, and soft gripping mechanisms to ensure ripe produce is harvested without damaging surrounding plants.",
-    buttonText: "See AI Technology",
-    link: "/aiTechnology",
-    image: bg2,
-    gradient: "linear-gradient(135deg, #12261c 0%, #153124 60%, #2ecc71 100%)",
-  },
-  {
-    title: "One Operator.",
-    highlight: "One Robot. One Acre.",
-    description:
-      "Our vision is precise and demanding — one trained operator, one robot, one acre per day.",
-    more: "Robotics should amplify human productivity, not eliminate it. Our long-term mission is operational efficiency — reducing physical strain, improving consistency, and enabling scalable agricultural output across Indian farms.",
-    buttonText: "View Products",
-    link: "/product",
-    image: bg3,
-    gradient: "linear-gradient(135deg, #0f1f16 0%, #214432 50%, #d4ac0d 100%)",
-  },
-];
+// Import your custom components
+import { TiltCard } from "../../components/TitleCard/TiltCard";
+import { FeatureCard } from "../../components/FeatureCard/FeatureCard";
+
+// Import CSS Module
+import styles from "./Home.module.css";
 
 export default function Home() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [demoOpen, setDemoOpen] = useState(false);
+  const navigate = useNavigate(); // 2. Initialize the navigate function
 
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  // 3. Create a navigation handler
+  const handleViewTechnology = () => {
+    navigate("/aiTechnology"); // Ensure this matches your route path in App.js
   };
 
   return (
-    <div className={styles.scrollContainer}>
-      {slides.map((slide, index) => (
-        <section
-          key={index}
-          className={styles.homeContainer}
-          style={{ background: slide.gradient }}>
-          <div className={styles.contentSection}>
-            <div className={styles.textWrapper}>
-              <h1 className={styles.heading}>
-                {slide.title} <br />
-                <span className={styles.highlightText}>{slide.highlight}</span>
-              </h1>
+    <div className={styles.container}>
+      <main>
+        {/* HERO SECTION */}
+        <section className={styles.hero}>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}>
+            {/* <div className={styles.badge}>
+              <span className="dot" /> Series A Funding Secured
+            </div> */}
 
-              <p className={styles.subtext}>{slide.description}</p>
-              {expandedIndex === index && (
-                <p className={styles.moreText}>{slide.more}</p>
-              )}
+            <h1 className={styles.title}>
+              The Future of <br />
+              <span className={styles.goldText}>Precision Farming</span>
+            </h1>
 
-              <div className={styles.buttonGroup}>
-                <Link to={slide.link} style={{ textDecoration: "none" }}>
-                  <Button variant="contained" className={styles.mainBtn}>
-                    {slide.buttonText}
-                  </Button>
-                </Link>
-                <Button
-                  variant="outlined"
-                  className={styles.outlineBtn}
-                  onClick={() => toggleExpand(index)}>
-                  {expandedIndex === index ? "Show Less" : "Learn More"}
-                </Button>
-              </div>
+            <p className={styles.description}>
+              Autonomous robotics powered by advanced computer vision. Reducing
+              labor costs while increasing yield quality by up to 40%.
+            </p>
+
+            <div className={styles.btnGroup}>
+              <button
+                className={styles.primaryBtn}
+                onClick={handleViewTechnology}>
+                View Technology{" "}
+                {/* <ArrowRight size={20} style={{ marginLeft: "8px" }} /> */}
+              </button>
+              {/* <button className={styles.secondaryBtn}>View Technology</button> */}
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.imageSection}>
-            <div className={styles.imageCard}>
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className={styles.farmImg}
-              />
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className={styles.visualWrapper}>
+            <TiltCard />
+          </motion.div>
         </section>
-      ))}
+
+        {/* SLOGAN SECTION */}
+        <section className={styles.sloganSection}>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className={styles.sloganTitle}>
+            One Operator.
+            <br />
+            <span className={styles.sloganHighlight}>One Robot.</span>
+            <br />
+            One Acre per Hour.
+          </motion.h2>
+        </section>
+
+        {/* BENTO GRID */}
+        <section className={styles.bentoGrid}>
+          <FeatureCard
+            title="AI Vision"
+            description="Detect ripeness with 99% accuracy."
+            icon={Scan}
+            className={styles.cardLarge}
+          />
+          <FeatureCard
+            title="Field Durability"
+            description="IP67 rated chassis for all weather."
+            icon={Tractor}
+            className={`${styles.cardSmall} ${styles.specialCard}`}
+          />
+          <FeatureCard
+            title="Data Analytics"
+            description="Real-time yield mapping."
+            icon={Database}
+            className={styles.cardSmall}
+          />
+          <FeatureCard
+            title="Precision Picking"
+            description="Soft-touch robotic grippers."
+            icon={Sprout}
+            className={styles.cardLarge}
+          />
+        </section>
+      </main>
     </div>
   );
 }
